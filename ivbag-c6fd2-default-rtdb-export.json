@@ -1,0 +1,34 @@
+{
+  "bag_info": {
+    "98F4ABB4377D": {
+      "-OMsG4tR7HB_OBJb2X5P": {
+        "ipaddress": "192.168.1.17",
+        "ivbag_type": "sdsd",
+        "macaddress": "98F4ABB4377D",
+        "name": "Rexsovel Llejes",
+        "room": "666"
+      },
+      "-OMsGuWupoWqNQo1HFr4": {
+        "ipaddress": "192.168.1.17",
+        "ivbag_type": "sdsdasdasdsad",
+        "macaddress": "98F4ABB4377D",
+        "name": "adasdasd",
+        "room": "666asdasdasd"
+      },
+      "-OMsHIZkJuVgngMY6f7t": {
+        "ipaddress": "192.168.1.17",
+        "ivbag_type": "asdsadsa",
+        "macaddress": "98F4ABB4377D",
+        "name": "asdsadsaddsadsada",
+        "room": "dasdasdasd"
+      }
+    }
+  },
+  "iv_nodes": {
+    "98F4ABB4377D": {
+      "color": "Violet",
+      "ipaddress": "192.168.1.17",
+      "macaddress": "98F4ABB4377D"
+    }
+  }
+}
