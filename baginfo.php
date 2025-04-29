@@ -74,7 +74,7 @@
                                     <br>
                                     <div class="field">
                                         <div class="label">
-                                        <img src="icons/iv-bag.png" alt="IV Bag Icon" style="width: 24px; height: 24px;">
+                                        <img src="iconset/iv-bag.png" alt="IV Bag Icon" style="width: 24px; height: 24px;">
                                         </div>
                                         <div class="value">Icon for IV Bag that is use
                                             for identifying what the sensor
@@ -83,7 +83,7 @@
                                     </div>
                                     <div class="field">
                                         <div class="label">
-                                            <img src="icons/blood.png" alt="Blood Backflow Icon" style="width: 24px; height: 24px;">
+                                            <img src="iconset/blood.png" alt="Blood Backflow Icon" style="width: 24px; height: 24px;">
                                         </div>
                                         <div class="value">
                                         Blood icon indicating that the blood

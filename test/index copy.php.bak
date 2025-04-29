@@ -43,14 +43,14 @@
                 <p class="bag-name">${item.name}</p>
                 <div class="bag-info-details">
                     <p>
-                        <img src="icons/iv-bag.png" alt="IV Bag Icon" style="width: 24px; height: 24px;">
+                        <img src="iconset/iv-bag.png" alt="IV Bag Icon" style="width: 24px; height: 24px;">
                         <br>
                         <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <circle class="ivbag-circle" cx="12" cy="12" r="10" stroke="black" stroke-width="2" fill="${getColor(item.ivbag_level)}" />
                         </svg>
                     </p>
                     <p>
-                        <img src="icons/blood.png" alt="Blood Backflow Icon" style="width: 24px; height: 24px;">
+                        <img src="iconset/blood.png" alt="Blood Backflow Icon" style="width: 24px; height: 24px;">
                         <br>
                         <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <circle class="backflow-circle" cx="12" cy="12" r="10" stroke="black" stroke-width="2" fill="${item.backflow == 1 ? 'red' : 'green'}" />
@@ -205,8 +205,8 @@
     //         echo "<div class='bag-info' data-id='" . htmlspecialchars($row['id']) . "'>";
     //         echo "<p>" . htmlspecialchars($row['name']) . "</p>";
     //         echo "<div class='bag-info-details'>";
-    //         echo "<p><img src='icons/iv-bag.png' alt='blood backflow Icon' style='width: 24px; height: 24px;'> <br>" . " <svg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><circle class='ivbag-circle' cx='12' cy='12' r='10' stroke='black' stroke-width='2' fill='{$bag_circle_color}' /></svg> " . "</p>";
-    //         echo "<p><img src='icons/blood.png' alt='blood backflow Icon' style='width: 24px; height: 24px;'> <br>" . " <svg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><circle class='backflow-circle' cx='12' cy='12' r='10' stroke='black' stroke-width='2' fill='{$bloodid_circle}' /></svg> " . "</p>";
+    //         echo "<p><img src='iconset/iv-bag.png' alt='blood backflow Icon' style='width: 24px; height: 24px;'> <br>" . " <svg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><circle class='ivbag-circle' cx='12' cy='12' r='10' stroke='black' stroke-width='2' fill='{$bag_circle_color}' /></svg> " . "</p>";
+    //         echo "<p><img src='iconset/blood.png' alt='blood backflow Icon' style='width: 24px; height: 24px;'> <br>" . " <svg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><circle class='backflow-circle' cx='12' cy='12' r='10' stroke='black' stroke-width='2' fill='{$bloodid_circle}' /></svg> " . "</p>";
     //         echo "</div>";
     //         echo "<div>";
     //         echo "<p>" . htmlspecialchars($row['room']) . "</p>";

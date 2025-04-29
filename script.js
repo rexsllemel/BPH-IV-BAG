@@ -85,14 +85,14 @@ let previousData = [];
             <br>
                 <div class="bag-info-details">
                     <p>
-                        <img src="icons/iv-bag.png" alt="IV Bag Icon" style="width: 24px; height: 24px;">
+                        <img src="iconset/iv-bag.png" alt="IV Bag Icon" style="width: 24px; height: 24px;">
                         <br>
                         <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <circle class="ivbag-circle" cx="12" cy="12" r="10" stroke="black" stroke-width="2" fill="${circleColor}" />
                         </svg>
                     </p>
                     <p>
-                        <img src="icons/blood.png" alt="Blood Backflow Icon" style="width: 24px; height: 24px;">
+                        <img src="iconset/blood.png" alt="Blood Backflow Icon" style="width: 24px; height: 24px;">
                         <br>
                         <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <circle class="backflow-circle" cx="12" cy="12" r="10" stroke="black" stroke-width="2" fill="${bflow_circleColor}" />
