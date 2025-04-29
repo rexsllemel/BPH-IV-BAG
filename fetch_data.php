@@ -3,20 +3,20 @@ header('Content-Type: application/json');
 include "connect.php";
 
 // Function to ping an IP address
-function ping($ip) {
-    // Execute the ping command and capture both output and return status
-    $pingResult = shell_exec(sprintf('ping -n 1 -w 1000 %s 2>&1', escapeshellarg($ip))); // Redirect errors to output
-    // error_log("Ping command executed for IP $ip. Result: $pingResult"); // Log the full result for debugging
+// function ping($ip) {
+//     // Execute the ping command and capture both output and return status
+//     $pingResult = shell_exec(sprintf('ping -n 1 -w 1000 %s 2>&1', escapeshellarg($ip))); // Redirect errors to output
+//     // error_log("Ping command executed for IP $ip. Result: $pingResult"); // Log the full result for debugging
 
-    // Check if the output contains 'TTL' (indicating a successful ping)
-    if (strpos($pingResult, 'TTL') !== false) {
-        return true;
-    }
+//     // Check if the output contains 'TTL' (indicating a successful ping)
+//     if (strpos($pingResult, 'TTL') !== false) {
+//         return true;
+//     }
 
-    // Log if the ping failed
-    // error_log("Ping failed for IP $ip. Check network or firewall settings.");
-    return false;
-}
+//     // Log if the ping failed
+//     // error_log("Ping failed for IP $ip. Check network or firewall settings.");
+//     return false;
+// }
 
 // Function to fetch data from Firebase
 function fetchFromFirebase($endpoint) {
@@ -83,9 +83,9 @@ foreach ($data as $mac => $info) {
 }
 
 // Add IP active status
-foreach ($filteredData as &$row) {
-    $row['ip_active'] = ping($row['ipAddress']) ? true : false;
-}
+// foreach ($filteredData as &$row) {
+//     $row['ip_active'] = ping($row['ipAddress']) ? true : false;
+// }
 
 if (isset($_GET['fetch_updates'])) {
     $data = fetchFromFirebase("bag_info");
@@ -109,7 +109,7 @@ if (isset($_GET['fetch_updates'])) {
         ];
     }
     foreach ($filteredData as &$row) {
-        $row['ip_active'] = ping($row['ipAddress']) ? true : false;
+        // $row['ip_active'] = ping($row['ipAddress']) ? true : false;
     }
     echo json_encode($filteredData);
     exit;
