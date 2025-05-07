@@ -1,2 +1,2 @@
 RewriteEngine On
-RewriteRule ^index\.php/([A-F0-9]+)$ patient.html?mac=$1 [L,QSA]
+RewriteRule ^([A-F0-9]+)$ patient.html?mac=$1 [L,QSA]
