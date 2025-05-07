@@ -64,12 +64,12 @@ let previousData = [];
             bagInfo.setAttribute('data-id', item.id);
 
             // Check if ip_active is explicitly false then it's offline
-            const boxColor = item.ip_active === false ? 'firebrick' : '';
-            const circleColor = item.ip_active === false ? 'grey' : getColor(item.ivbag_level);
-            const backflow_circleColor = item.ip_active === false ? 'grey' : getColor(item.backflow);
+            const boxColor = item.active_status === 0 ? 'firebrick' : '';
+            const circleColor = item.active_status === 0 ? 'grey' : getColor(item.ivbag_level);
+            const backflow_circleColor = item.active_status === 0 ? 'grey' : getColor(item.backflow);
             let bflow_circleColor;
 
-            if (item.ip_active === false) {
+            if (item.active_status === 0) {
                 bflow_circleColor = 'grey';
             }else if (item.backflow == 1) {
                 bflow_circleColor = 'red';
@@ -111,16 +111,17 @@ let previousData = [];
     }
 
     function getColor(level) {
-        if (level < 15) return 'red'; // Critical level
+        if (level < 20) return 'red'; // Critical level
         if (level <= 49) return 'yellow'; // Warning level
         return 'green'; // Normal level
     }
 
     function getPriority(item) {
-        if (item.ivbag_level < 15) return 0; // Critical IV bag level (red)
-        if (item.backflow == 1) return 1; // Blood backflow (red)
+        if (item.ivbag_level < 20) return 0; // Critical IV bag level (red)
+        if (item.active_status == 0) return 1; // Warning IV bag level (yellow)
         if (item.ivbag_level <= 49) return 2; // Warning IV bag level (yellow)
-        return 3; // Normal conditions
+        if (item.backflow == 1) return 3; // Blood backflow (red)
+        return 4; // Normal conditions
     }
 
     // Fetch updates on page load and every 5 seconds

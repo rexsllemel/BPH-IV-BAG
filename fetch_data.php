@@ -108,9 +108,9 @@ if (isset($_GET['fetch_updates'])) {
             "ivbag_type" => $info['ivbag_type'] ?? null,
         ];
     }
-    foreach ($filteredData as &$row) {
-        // $row['ip_active'] = ping($row['ipAddress']) ? true : false;
-    }
+    // foreach ($filteredData as &$row) {
+    //     $row['ip_active'] = ping($row['ipAddress']) ? true : false;
+    // }
     echo json_encode($filteredData);
     exit;
 }

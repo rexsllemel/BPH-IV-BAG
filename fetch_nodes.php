@@ -16,5 +16,5 @@ if ($nodes) {
         echo '</div>';
     }
 } else {
-    echo '<p>No nodes found.</p>';
+    echo '<p>No new nodes found.</p>';
 }

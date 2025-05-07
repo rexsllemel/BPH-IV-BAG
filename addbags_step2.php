@@ -1,5 +1,27 @@
 <?php
-    include "fetch_newnodes.php";
+    session_start();
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        // Save the second step data into the session
+        $_SESSION['step2'] = [
+            'watcher' => $_POST['watcher'],
+            'contact' => $_POST['contact'],
+            'room' => $_POST['room'],
+            'ipaddress' => $_POST['ipaddress'],
+            'macaddress' => $_POST['macaddress']
+        ];
+
+        // Combine all data and process it
+        $formData = array_merge($_SESSION['step1'], $_SESSION['step2']);
+        // Process $formData as needed (e.g., save to database)
+
+        // Clear session data
+        session_destroy();
+
+        // Redirect to a confirmation or success page
+        header('Location: success.php');
+        exit;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,20 +85,8 @@
         <h3 class="title">BPH Maramag IV Bag Monitoring System</h3>
         <div class="main-body">
             <br>
-            <form action="addbags.php" method="POST" class="form-grid" id="add-form">
-                        <div class="sub-title">Add IV Bag Information</div>
-                        <div class="form-column">
-                            <label for="name">Name:</label>
-                            <input type="text" id="name" name="name" required>
-                            <label for="last_name">Last Name:</label>
-                            <input type="text" id="last_name" name="last_name" required>
-                            <label for="illness">Illness:</label>
-                            <input type="text" id="illness" name="illness" required>
-                            <label for="ivbag_type">IV Bag Type:</label>
-                            <input type="text" id="ivbag_type" name="ivbag_type" required>
-                            <label for="date_admitted">Date Admitted:</label>
-                            <input type="date" id="date_admitted" name="date_admitted" required>
-                        </div>
+            <form action="addbags_step2.php" method="POST" class="form-grid" id="add-form">
+                        <div class="sub-title">Add IV Bag Information - Step 2</div>
                         <div class="form-column">
                             <label for="watcher">Watcher:</label>
                             <input type="text" id="watcher" name="watcher" required>
@@ -88,22 +98,22 @@
                             <input type="text" id="ipaddress" name="ipaddress" readonly class="readonly-input">
                             <label for="macaddress">MAC Address:</label>
                             <input type="text" id="macaddress" name="macaddress" readonly class="readonly-input">
-                            <div>
-                            <h3>Select from available nodes below:</h3>
+                        </div>
+                        <div>
+                            <h3>Available nodes:</h3>
                             <br>
                             <div class="container_new_nodes">
+                                <!-- Dynamically load available nodes here -->
+                                <?php
+                                    include "fetch_newnodes.php";
+                                    foreach ($newNodes as $node) {
+                                        echo "<div class='new-bag-info'><p>Node: $node</p></div>";
+                                    }
+                                ?>
                             </div>
                         </div>
-                        <br>
-                            <button type="submit" id="submit-button">Submit</button>
-                        </div>
+                        <button type="submit" id="submit-button">Submit</button>
                     </form>
-            
-            <!-- <div>
-                <h3>Available nodes:</h3>
-                <br>
-                <div class="container_new_nodes"></div>
-            </div> -->
         </div>
     </main>
 </body>
