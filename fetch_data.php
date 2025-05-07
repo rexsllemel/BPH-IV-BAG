@@ -65,6 +65,7 @@ if (!is_array($data)) {
 // Filter required fields
 $filteredData = [];
 foreach ($data as $mac => $info) {
+    error_log("Processing macaddress: " . $mac); // Debugging: Log macaddress
     $filteredData[] = [
         "name" => $info['name'] ?? null, 
         "lastname" => $info['last_name'] ?? null, 
@@ -73,7 +74,7 @@ foreach ($data as $mac => $info) {
         "backflow" => $info['backflow'] ?? null,
         "room" => $info['room'] ?? null,
         "ipAddress" => $info['ipAddress'] ?? null,
-        "macaddress" => $mac,
+        "macaddress" => $mac, // Ensure macaddress is included
         "ivbag_type" => $info['ivbag_type'] ?? null,
         "contact" => $info['contact'] ?? null,
         "dateAdmitted" => $info['date_admitted'] ?? null,
@@ -97,6 +98,7 @@ if (isset($_GET['fetch_updates'])) {
 
     $filteredData = [];
     foreach ($data as $mac => $info) {
+        error_log("Processing macaddress: " . $mac); // Debugging: Log macaddress
         $filteredData[] = [
             "name" => $info['name'] ?? null,
             "active_status" => $info['active_status'] ?? null,
@@ -104,7 +106,7 @@ if (isset($_GET['fetch_updates'])) {
             "backflow" => $info['backflow'] ?? null,
             "room" => $info['room'] ?? null,
             "ipAddress" => $info['ipAddress'] ?? null,
-            "macaddress" => $mac,
+            "macaddress" => $mac, // Ensure macaddress is included
             "ivbag_type" => $info['ivbag_type'] ?? null,
         ];
     }

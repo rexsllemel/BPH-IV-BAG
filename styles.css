@@ -32,17 +32,21 @@ body{
     padding: 5px 1.3em;
     background-color: var(--nav-clr);
     border-right: 1px solid var(--line-clr);
-
     position: sticky;
     top: 0;
     align-self: start;
     overflow: hidden;
     text-wrap: nowrap;
     transition: 300ms ease-in-out;
+    display: flex;
+    flex-direction: column;
 
 }
 #sidebar ul{
     list-style: none;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 #sidebar > ul > li:first-child{
     display: flex;
@@ -68,7 +72,7 @@ body{
     display: flex;
     align-items: center;
     gap: 1em;
-}
+} */
 .dropdown-btn{
     width: 100%;
     text-align: left;
@@ -83,10 +87,10 @@ body{
 }
 #sidebar a span, #sidebar .dropdown-btn span{
     flex-grow: 1;
-};
+}
 #sidebar a:hover, #sidebar .dropdown-btn:hover{
     background-color: var(--hover-clr);
-};
+}
 #sidebar .sub-menu{
     grid-template-rows: 0fr;
     display: grid;
@@ -191,6 +195,69 @@ body{
     }
 
 }
+
+.info_container_parent{
+    padding: min(30px, 7%);
+    padding-top: 0;
+    /* p{
+        color: var(--secondary-clr);
+        margin-top: 5px;
+        margin-bottom: 15px;
+        mix-blend-mode: difference;
+
+    } */
+}
+.info_container{
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.info_card {
+    /* width: 100%; */
+    border: 0.1px solid #ccc; /* Replace with your outline color */
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+    padding: 16px;
+    background: white;
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+  
+  .info_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .info_column {
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+  }
+
+  .info_field {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 8px;
+  }
+  
+  .info_label {
+    width: 120px;
+    font-weight: bold;
+    font-size: 15px;
+    color: #555;
+  }
+  
+  .info_value {
+    flex: 1;
+    color: #333;
+  }
 
 .bag-info{
     width: 140px;
@@ -372,6 +439,54 @@ form p {
     cursor: not-allowed;
     opacity: 0.7;
 }
+
+.info_actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%; /* Ensure buttons span the width of the card */
+}
+
+.qr-btn, .delete-btn {
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Limit button width */
+    height: 40px; /* Ensure buttons are square */
+}
+
+.qr-btn {
+    background-color: #1976d2; /* Solid blue background */
+}
+
+.qr-btn:hover {
+    background-color: #0d47a1; /* Darker blue on hover */
+}
+
+.delete-btn {
+    background-color: #d32f2f; /* Red background */
+}
+
+.delete-btn:hover {
+    background-color: #b71c1c; /* Darker red hover */
+}
+
+.qr-btn svg, .delete-btn svg {
+    fill: #000000; /* Black fill for icons */
+    width: 24px;
+    height: 24px;
+}
+
+#qrModal img {
+    max-width: 100%;
+    height: auto;
+}
+
 @media (max-width: 768px) {
     #sidebar {
         width: 60px;

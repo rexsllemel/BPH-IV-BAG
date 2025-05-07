@@ -149,24 +149,7 @@ body{
     background-color: var(--base-clr);
     color: var(--text-clr);
 }
-.container_parent{
-    padding: min(30px, 7%);
-    padding-top: 0;
-    /* p{
-        color: var(--secondary-clr);
-        margin-top: 5px;
-        margin-bottom: 15px;
-        mix-blend-mode: difference;
 
-    } */
-}
-.container{
-    height: auto;
-    width: auto;
-    display: flex;
-    flex-wrap: wrap;
-
-}
 .container_new_nodes{
     height: auto;
     width: auto;
@@ -347,49 +330,8 @@ form p {
     opacity: 0.7;
 }
 
-.card {
-    /* width: 100%; */
-    border: 0.1px solid #ccc; /* Replace with your outline color */
-    border-radius: 8px;
-    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
-    padding: 16px;
-    background: white;
-    height: auto;
-    width: auto;
-    display: flex;
-    flex-wrap: wrap;
+  
 
-  }
-  
-  .row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  
-  .column {
-    display: flex;
-    flex-direction: column;
-    /* width: 100%; */
-  }
-  
-  .field {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 8px;
-  }
-  
-  .label {
-    width: 120px;
-    font-weight: bold;
-    font-size: 15px;
-    color: #555;
-  }
-  
-  .value {
-    flex: 1;
-    color: #333;
-  }
   
   .status {
     color: green; /* Set dynamically with JS if needed for statusColor */

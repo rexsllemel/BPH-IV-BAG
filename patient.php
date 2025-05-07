@@ -39,15 +39,15 @@ if (empty($data)) {
         </div>
         <div class="card-body">
             <p><strong>Name:</strong> <?= htmlspecialchars($data['name']) ?> <?= htmlspecialchars($data['last_name']) ?></p>
+            <p><strong>IV Bag Level:</strong> <?= htmlspecialchars($data['ivbag_level']) ?>%</p>
+            <p><strong>Blood Backflow:</strong> <?= $data['backflow'] ? 'Yes' : 'No' ?></p>
+            <p><strong>IV Bag Type:</strong> <?= htmlspecialchars($data['ivbag_type']) ?></p>
             <p><strong>Room:</strong> <?= htmlspecialchars($data['room']) ?></p>
+            <p><strong>Watcher:</strong> <?= htmlspecialchars($data['watcher']) ?></p>
             <p><strong>Contact:</strong> <?= htmlspecialchars($data['contact']) ?></p>
             <p><strong>Illness:</strong> <?= htmlspecialchars($data['illness']) ?></p>
+            <p><strong>Sensor Status:</strong> <?= $data['active_status'] ? 'Active' : 'Inactive' ?></p>
             <p><strong>Date Admitted:</strong> <?= htmlspecialchars($data['date_admitted']) ?></p>
-            <p><strong>IV Bag Type:</strong> <?= htmlspecialchars($data['ivbag_type']) ?></p>
-            <p><strong>IV Bag Level:</strong> <?= htmlspecialchars($data['ivbag_level']) ?>%</p>
-            <p><strong>Backflow:</strong> <?= $data['backflow'] ? 'Yes' : 'No' ?></p>
-            <p><strong>Status:</strong> <?= $data['active_status'] ? 'Active' : 'Inactive' ?></p>
-            <p><strong>Watcher:</strong> <?= htmlspecialchars($data['watcher']) ?></p>
         </div>
     </div>
 </div>
