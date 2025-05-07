@@ -1,5 +1,10 @@
 <?php
     include "fetch_newnodes.php";
+    session_start();
+    if (!isset($_SESSION['idToken'])) {
+        header("Location: login.php");
+        exit;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
