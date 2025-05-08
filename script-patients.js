@@ -180,7 +180,7 @@ function showQRCode(macaddress) {
     qrContent.style.position = 'relative';
 
     const qrImage = document.createElement('img');
-    qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?data=http://10.0.1.254/ivbag/patient.php/${macaddress}&size=200x200`;
+    qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?data=https://bphmaramag.faithcloud.net/patientqr.php?mac=${macaddress}&size=200x200`;
     qrImage.alt = 'QR Code';
     qrImage.style.marginBottom = '20px'; // Add margin below the QR code
 

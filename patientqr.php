@@ -5,7 +5,7 @@
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 // Match /patient.php/ABCDEF123456
-if (!isset($_GET['mac']) && preg_match('#/patient\.php/([A-F0-9]+)$#i', $uri, $matches)) {
+if (!isset($_GET['mac']) && preg_match('#/patientqr\.php/([A-F0-9]+)$#i', $uri, $matches)) {
     $_GET['mac'] = $matches[1];
 }
 
