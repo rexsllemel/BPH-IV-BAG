@@ -119,9 +119,3 @@ if (isset($_GET['fetch_updates'])) {
 
 // Return JSON response
 echo json_encode($filteredData);
-
-session_start();
-if (!isset($_SESSION['idToken'])) {
-    header("Location: login.php");
-    exit;
-}
