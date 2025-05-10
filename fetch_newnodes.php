@@ -11,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $room = $_POST['room'];
         $ipaddress = $_POST['ipaddress'];
         $macAddress = $_POST['macaddress'];
+        $station = $_POST['station'];
 
         $firebase_host = "https://ivbag-c6fd2-default-rtdb.firebaseio.com/";
         $firebase_auth = "npATCX3aayuKoQ3vunz9TTlACd7LMajjH2rVepfG";
@@ -37,6 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 "contact" => $contact,
                 "room" => $room,
                 "ipAddress" => $ipaddress,
+                "station" => $station,
                 "macAddress" => $macAddress
             ]);
 
@@ -57,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 echo "<script>alert('Data successfully sent to Firebase!');</script>";
 
                 // Remove the /iv_nodes/{macAddress} path
-                $delete_path = "/iv_nodes/" . $macAddress . ".json";
+                $delete_path = "/config_mode/" . $macAddress . ".json";
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_URL, $firebase_host . $delete_path);
                 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");

@@ -27,9 +27,21 @@
                 <!-- <span class="logo">IV Bag Information</span> -->
             </li>
             <li>
-                <a href="index.php">
+                <a href="station1.php">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M520-600v-240h320v240H520ZM120-440v-400h320v400H120Zm400 320v-400h320v400H520Zm-400 0v-240h320v240H120Zm80-400h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z"/></svg>
-                    <span>Dashboard</span>
+                    <span>Station 1</span>
+                </a>
+            </li>
+            <li>
+                <a href="station2.php">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M520-600v-240h320v240H520ZM120-440v-400h320v400H120Zm400 320v-400h320v400H520Zm-400 0v-240h320v240H120Zm80-400h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z"/></svg>
+                    <span>Station 2</span>
+                </a>
+            </li>
+            <li>
+                <a href="station3.php">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M520-600v-240h320v240H520ZM120-440v-400h320v400H120Zm400 320v-400h320v400H520Zm-400 0v-240h320v240H120Zm80-400h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z"/></svg>
+                    <span>Station 3</span>
                 </a>
             </li>
             <li>
@@ -46,8 +58,14 @@
             </li>
             <li class="active">
                     <a id="toggle-btn" href="addbags.php">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M222-200 80-342l56-56 85 85 170-170 56 57-225 226Zm0-320L80-662l56-56 85 85 170-170 56 57-225 226Zm298 240v-80h360v80H520Zm0-320v-80h360v80H520Z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"/></svg>
                         <span>Add Bags</span>
+                    </a>
+            </li>
+            <li>
+                    <a id="toggle-btn" href="./apk/ivbag.apk">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/></svg>
+                        <span>Download APP</span>
                     </a>
             </li>
             <li style="margin-top: auto;">
@@ -73,6 +91,13 @@
                             <input type="text" id="illness" name="illness" required>
                             <label for="ivbag_type">IV Bag Type:</label>
                             <input type="text" id="ivbag_type" name="ivbag_type" required>
+                            <label for="station">Select Station:</label>
+                            <select id="station" name="station" onchange="updateIVBagType()" required>
+                            <option value="">--Select Station--</option>
+                            <option value="Station 1">Station 1</option>
+                            <option value="Station 2">Station 2</option>
+                            <option value="Station 3">Station 3</option>
+                            </select>
                             <label for="date_admitted">Date Admitted:</label>
                             <input type="date" id="date_admitted" name="date_admitted" required>
                         </div>
@@ -80,13 +105,33 @@
                             <label for="watcher">Watcher:</label>
                             <input type="text" id="watcher" name="watcher" required>
                             <label for="contact">Contact #:</label>
-                            <input type="text" id="contact" name="contact" required>
+                            <div style="display: flex; align-items: stretch;">
+                                <span style="
+                                    padding: 0 8px;
+                                    background: #d9d9d9;
+                                    border: 1px solid #ccc;
+                                    border-right: none;
+                                    border-radius: 4px 0 0 4px;
+                                    display: flex;
+                                    align-items: center;
+                                ">+63</span>
+                                <input type="tel" id="contact" name="contact" pattern="[0-9]{10}" maxlength="10" required 
+                                    style="
+                                        border: 1px solid #ccc;
+                                        border-radius: 0 4px 4px 0;
+                                        flex: 1;
+                                        padding: 8px;
+                                        margin: 0;
+                                        height: auto;
+                                    "
+                                    title="Please enter exactly 10 digits (no +63 needed)">
+                            </div>
                             <label for="room">Room:</label>
                             <input type="text" id="room" name="room" required>
                             <label for="ipaddress">IP Address:</label>
-                            <input type="text" id="ipaddress" name="ipaddress" readonly class="readonly-input">
+                            <input type="text" id="ipaddress" name="ipaddress" readonly class="readonly-input" required>
                             <label for="macaddress">MAC Address:</label>
-                            <input type="text" id="macaddress" name="macaddress" readonly class="readonly-input">
+                            <input type="text" id="macaddress" name="macaddress" readonly class="readonly-input" required> 
                             <div>
                             <h3>Select from available nodes below:</h3>
                             <br>

@@ -57,3 +57,27 @@ document.querySelector(".container_new_nodes").addEventListener("click", functio
         }
     }
 });
+
+document.getElementById('add-form').addEventListener('submit', function(e) {
+    const contactInput = document.getElementById('contact');
+    const contactValue = contactInput.value;
+    
+    // Check if exactly 10 digits
+    if (!/^\d{10}$/.test(contactValue)) {
+        alert('Contact number must be exactly 10 digits');
+        e.preventDefault();
+        return;
+    }
+    
+    // Prepend +63 to the contact number before submission
+    contactInput.value = '+63' + contactValue;
+});
+document.getElementById('contact').addEventListener('input', function(e) {
+    // Remove any non-digit characters
+    this.value = this.value.replace(/\D/g, '');
+    
+    // Limit to 10 digits
+    if (this.value.length > 10) {
+        this.value = this.value.slice(0, 10);
+    }
+});

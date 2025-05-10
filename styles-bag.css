@@ -186,6 +186,14 @@ body{
 
     }
 
+    p.no-blend {
+        color: black;
+    }
+
+
+}
+p.no-blend {
+    color: black;
 }
 
 .bag-info{

@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($data['idToken'])) {
             $_SESSION['idToken'] = $data['idToken'];
             $_SESSION['email'] = $data['email'];
-            header("Location: index.php");
+            header("Location: station1.php");
             exit;
         } else {
             $error = $data['error']['message'] ?? "Unknown error";

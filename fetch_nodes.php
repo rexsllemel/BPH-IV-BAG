@@ -1,7 +1,7 @@
 <?php
 include "connect.php";
 
-$firebase_url = FIREBASE_HOST . "/iv_nodes.json?auth=" . FIREBASE_AUTH;
+$firebase_url = FIREBASE_HOST . "/config_mode.json?auth=" . FIREBASE_AUTH;
 $response = file_get_contents($firebase_url);
 $nodes = json_decode($response, true);
 
@@ -16,5 +16,5 @@ if ($nodes) {
         echo '</div>';
     }
 } else {
-    echo '<p>No new nodes found.</p>';
+    echo '<p class="no-blend">No new node sensor found.</p>';
 }

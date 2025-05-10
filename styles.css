@@ -195,6 +195,10 @@ body{
     }
 
 }
+.no-blend {
+    mix-blend-mode: normal !important;
+    color: black !important;
+}
 
 .info_container_parent{
     padding: min(30px, 7%);
@@ -414,6 +418,25 @@ form p {
     border-color: var(--accent-clr);
     box-shadow: 0 0 5px var(--accent-clr);
 }
+.form-column select, option {
+    /* width: 90%; */
+    padding: 0.8em;
+    margin-right: 0.2%;
+    margin-bottom: 1.5em;
+    border: 1px solid var(--line-clr);
+    border-radius: 0.5em;
+    background-color: var(--base-clr);
+    color: var(--text-clr);
+    font-size: 1rem;
+    max-width: auto;
+
+}
+
+.form-column select:focus {
+    outline: none;
+    border-color: var(--accent-clr);
+    box-shadow: 0 0 5px var(--accent-clr);
+}
 
 .form-column button {
     align-self: flex-end;
@@ -473,7 +496,7 @@ form p {
 }
 
 .delete-btn:hover {
-    background-color: #b71c1c; /* Darker red hover */
+    background-color: #5b0000; /* Darker red hover */
 }
 
 .qr-btn svg, .delete-btn svg {
@@ -482,9 +505,49 @@ form p {
     height: 24px;
 }
 
+.edit-btn {
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #028200; /* Orange background */
+    margin: 0 5px; /* Add some spacing between buttons */
+}
+
+.edit-btn:hover {
+    background-color: #006508; /* Darker orange on hover */
+}
+
+.edit-btn svg {
+    fill: #000000;
+    width: 24px;
+    height: 24px;
+}
+
 #qrModal img {
     max-width: 100%;
     height: auto;
+}
+
+#editForm select {
+    width: 80%;
+    padding: 3.84px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #d9d9d9;
+    font-size: .8rem;
+}
+
+#editForm select:focus {
+    outline: none;
+    border-color: #1976d2;
+    box-shadow: 0 0 5px rgba(25, 118, 210, 0.5);
 }
 
 @media (max-width: 768px) {

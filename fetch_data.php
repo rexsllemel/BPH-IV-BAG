@@ -80,6 +80,7 @@ foreach ($data as $mac => $info) {
         "dateAdmitted" => $info['date_admitted'] ?? null,
         "illness" => $info['illness'] ?? null,
         "watcher" => $info['watcher'] ?? null,
+        "station" => $info['station'] ?? null,
     ];
 }
 
@@ -108,6 +109,7 @@ if (isset($_GET['fetch_updates'])) {
             "ipAddress" => $info['ipAddress'] ?? null,
             "macaddress" => $mac, // Ensure macaddress is included
             "ivbag_type" => $info['ivbag_type'] ?? null,
+            "station" => $info['station'] ?? null,
         ];
     }
     // foreach ($filteredData as &$row) {
