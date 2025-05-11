@@ -69,9 +69,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 curl_close($ch);
 
                 if ($delete_http_code === 200) {
-                    echo "<script>alert('Node successfully removed from /iv_nodes.');</script>";
+                    echo "<script>alert('Node successfully removed from /config_mode.');</script>";
                 } else {
-                    echo "<script>alert('Failed to remove node from /iv_nodes.');</script>";
+                    echo "<script>alert('Failed to remove node from /config_mode.');</script>";
                 }
             } else {
                 echo "<script>alert('Failed to send data to Firebase.');</script>";

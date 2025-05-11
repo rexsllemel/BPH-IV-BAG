@@ -59,7 +59,11 @@ if (empty($data)) {
             <p><strong>Sensor Status:</strong> <?= $data['active_status'] ? 'Active' : 'Inactive' ?></p>
             <p><strong>Date Admitted:</strong> <?= htmlspecialchars($data['date_admitted']) ?></p>
         </div>
+        <button>
+            <a " class="btn btn-primary">Test</a>
+        </button>
     </div>
+
 </div>
 
 </body>

@@ -59,6 +59,11 @@ let previousData = [];
         });
 
         filteredData.forEach(item => {
+            // Check for emergency button press
+            if (item.emergencyBtn === 1) {
+                showEmergencyModal(item);
+            }
+
             let bagInfo = document.createElement('div');
             bagInfo.classList.add('bag-info');
             bagInfo.setAttribute('data-id', item.id);
@@ -109,6 +114,39 @@ let previousData = [];
             `;
             container.appendChild(bagInfo);
         });
+    }
+
+    function showEmergencyModal(item) {
+        // Create modal
+        const modal = document.createElement('div');
+        modal.classList.add('modal');
+        modal.innerHTML = `
+            <div class="modal-content">
+                <p>Patient ${item.name} is requesting an emergency and pressed a button at ${item.station}, room ${item.room}.</p>
+                <button id="close-modal">Close</button>
+            </div>
+        `;
+        document.body.appendChild(modal);
+
+        // Close modal and update Firebase
+        document.getElementById('close-modal').addEventListener('click', () => {
+            modal.remove();
+            updateEmergencyStatus(item.macaddress);
+        });
+    }
+
+    function updateEmergencyStatus(macaddress) {
+        fetch(`https://ivbag-c6fd2-default-rtdb.firebaseio.com/bag_info/${macaddress}/emergencyBtn.json`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(0) // Reset emergencyBtn to 0
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to update emergency status');
+            }
+        })
+        .catch(error => console.error('Error updating emergency status:', error));
     }
 
     function getColor(level) {

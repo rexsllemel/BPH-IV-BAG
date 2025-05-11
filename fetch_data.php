@@ -81,6 +81,7 @@ foreach ($data as $mac => $info) {
         "illness" => $info['illness'] ?? null,
         "watcher" => $info['watcher'] ?? null,
         "station" => $info['station'] ?? null,
+        "emergencyBtn" => $info['emergencyBtn'] ?? null,
     ];
 }
 
@@ -110,6 +111,7 @@ if (isset($_GET['fetch_updates'])) {
             "macaddress" => $mac, // Ensure macaddress is included
             "ivbag_type" => $info['ivbag_type'] ?? null,
             "station" => $info['station'] ?? null,
+            "emergencyBtn" => $info['emergencyBtn'] ?? null,
         ];
     }
     // foreach ($filteredData as &$row) {

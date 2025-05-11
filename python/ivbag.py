@@ -47,7 +47,7 @@ while True:
         # Check if the level is critical and if a message was sent recently
         if level < 20:
             current_time = time.time()
-            if mac not in last_sent_time or (current_time - last_sent_time[mac]) > 300:  # 300 seconds = 5 minutes
+            if mac not in last_sent_time or (current_time - last_sent_time[mac]) > 120:  # 120 seconds = 2 minutes
                 send_sms(contact, f"Hi, {name}! Your IV Bag/Dextrose is almost empty. With {level}% left from {station} {room}.")
                 last_sent_time[mac] = current_time  # Update the last sent time
             else:
